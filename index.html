@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>我的網頁</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden; /* 隱藏影片超出的部分 */
+        }
+
+        #video-background {
+            position: fixed;
+            right: 0;
+            bottom: 0;
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            z-index: -100;
+            background-size: cover;
+        }
+
+        #menu {
+            position: fixed;
+            top: 0;
+            right: 0;
+            padding: 20px; /* 調整菜單內容與邊緣的距離 */
+            z-index: 999;
+        }
+
+        #menu ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            text-align: right; /* 文字靠右對齊 */
+        }
+
+        #menu ul li {
+            display: inline;
+            margin: 0 10px;
+        }
+
+        #menu ul li a {
+            text-decoration: none;
+            color: white;
+            font-size: 24px;
+            padding: 10px 20px;
+            border: 1px solid white;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+
+        #menu ul li a:hover {
+            background-color: white;
+            color: black;
+        }
+
+        /* 添加額外的樣式來將內容下移以防止遮擋 */
+        #content {
+            margin-top: 70px; /* 菜單高度 + 20px 的額外間距 */
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <video autoplay loop muted id="video-background">
+        <source src="video/lifeifei.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <div id="menu">
+        <ul>
+            <li><a href="#basic-intro">基本介紹</a></li>
+            <li><a href="#portfolio">個人作品</a></li>
+            <li><a href="#research">研究領域</a></li>
+            <li><a href="#other">其他資料</a></li>
+        </ul>
+    </div>
+
+    <!-- 內容部分 -->
+    <div id="content">
+        <div id="basic-intro">
+            <h1>基本介紹</h1>
+            <!-- 在這裡加入你的基本介紹內容 -->
+        </div>
+
+        <div id="portfolio">
+            <h1>個人作品</h1>
+            <!-- 在這裡加入你的個人作品內容 -->
+        </div>
+
+        <div id="research">
+            <h1>研究領域</h1>
+            <!-- 在這裡加入你的研究領域內容 -->
+        </div>
+
+        <div id="other">
+            <h1>其他資料</h1>
+            <!-- 在這裡加入你的其他資料內容 -->
+        </div>
+    </div>
+
+</body>
+</html>
