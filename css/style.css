@@ -10,15 +10,13 @@ body {
     height: 100vh; /* 使內容填滿整個視窗高度 */
 }
 
-#video-background {
-    position: fixed;
+#loopingVideo {
     right: 0;
     bottom: 0;
     min-width: 100%;
     min-height: 100%;
-    width: auto;
-    height: auto;
-    z-index: -100;
+    width: 1920px;
+    height: 1080px;
     background-size: cover;
 }
 
