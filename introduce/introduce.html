@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Black Background with Images</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: black; /* 設置背景為黑色 */
+        }
+
+        /* 使用 flexbox 來排列圖片 */
+        .image-container {
+            display: flex;
+            justify-content: center; /* 在水平方向居中對齊 */
+            align-items: center; /* 在垂直方向居中對齊 */
+            height: 100vh; /* 讓容器填滿整個視窗高度 */
+        }
+
+        .image-container img {
+            max-width: 100%; /* 圖片最大寬度為視窗的一半 */
+            max-height: 100%; /* 圖片最大高度為視窗的 80% */
+            object-fit: cover; /* 調整圖片以填滿容器 */
+            margin: 0px; /* 添加一些間距 */
+        }
+    </style>
+</head>
+<body>
+    <!-- 第一張圖片 -->
+    <div class="image-container">
+        <img src="../image/image1.png" alt="Image 1">
+    </div>
+
+    <!-- 第二張圖片 -->
+    <div class="image-container">
+        <img src="../image/image2.png" alt="Image 2">
+    </div>
+</body>
+</html>
