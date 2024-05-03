@@ -1,0 +1,16 @@
+#center-text {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 36px;
+    color: white;
+}
+#content {
+    position: absolute;
+    left: 10%; /* 調整為左邊留出空間 */
+    width: 80%; /* 使用80%的寬度 */
+    top: 50%; /* 垂直居中 */
+    transform: translateY(-50%);
+    color: white;
+}
