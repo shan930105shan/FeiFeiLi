@@ -3,39 +3,51 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Black Background with Images</title>
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            background-color: black; /* 設置背景為黑色 */
-        }
-
-        /* 使用 flexbox 來排列圖片 */
-        .image-container {
-            display: flex;
-            justify-content: center; /* 在水平方向居中對齊 */
-            align-items: center; /* 在垂直方向居中對齊 */
-            height: 100vh; /* 讓容器填滿整個視窗高度 */
-        }
-
-        .image-container img {
-            max-width: 100%; /* 圖片最大寬度為視窗的一半 */
-            max-height: 100%; /* 圖片最大高度為視窗的 80% */
-            object-fit: cover; /* 調整圖片以填滿容器 */
-            margin: 0px; /* 添加一些間距 */
-        }
-    </style>
+    <title>Introduce</title>
+    <link rel="stylesheet" href="../css/introduce.css">
 </head>
 <body>
-    <!-- 第一張圖片 -->
+    <div id="menu">
+        <ul>
+           <li><a href="../introduce/introduce.html">Introduce</a></li>
+           <li><a href="#portfolio">Portfolio</a></li>
+           <li><a href="../research/research.html">Research</a></li>
+           <li><a href="../other/other.html">Other</a></li>
+       </ul>
+   </div>
+    <div class="content">
+        <p style="height: 150vh;"></p> <!-- 增加高度以便滾動 -->
+    </div>
     <div class="image-container">
-        <img src="../image/image1.png" alt="Image 1">
+        <img src="../image/Inroduce-01.png" alt="FeiFeiLi Image">
+        <p class="float-text">Li Feifei is the first Sequoia Chair Professor at Stanford University, 
+            a member of the National Academy of Engineering, the National Academy of Medicine, 
+            and the American Academy of Arts and Sciences. He once worked in the Artificial Intelligence Laboratory and Stanford Vision Laboratory of Stanford University. 
+            He is currently the chief scientist and chief researcher of ImageNet, director of the Stanford Institute for Human-Centered Artificial Intelligence, 
+            and co-founder and chairman of AI4ALL.</p>
     </div>
 
-    <!-- 第二張圖片 -->
-    <div class="image-container">
-        <img src="../image/image2.png" alt="Image 2">
+    <div class="image-container2">
+        <img src="../image/Inroduce-02.png" alt="Your Image">
+        <p class="float-text"> Li Feifei's research fields mainly include computer vision, 
+            cognitive neuroscience, computer neuroscience and big data analysis. 
+            She has published more than 200 scientific papers. 
+            Her articles have been published in the world's top authoritative and prestigious academic journals such as Nature and Proceedings of the National Academy of Sciences,
+             and often appear in computer science and neuroscience-related journals and conference reports.
+        </p>
     </div>
+
+    <div class="image-container3">
+        <img src="../image/Inroduce-03.png" alt="Your Image">
+        <p class="float-text"> She is an important leader in this wave of AI development since 2010.
+             When AI development was at a bottleneck, she used her unique insights and enthusiasm for exploring the unknown to make major breakthroughs in the field of computer vision. 
+             She currently serves as the dean of the "Human-Centered AI Institute" at Stanford University. 
+             She firmly believes that it is time for us to reimagine AI. AI has become a responsibility and the responsibility of everyone.
+
+        </p>
+    </div>
+
+    <p style="height: 20vh;"></p> <!-- 增加高度以便測試滾動 -->
+    <script src="../javascript/introduce.js"></script>
 </body>
 </html>
