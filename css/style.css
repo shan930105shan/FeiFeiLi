@@ -1,29 +1,62 @@
 /* styles.css */
 
 body {
+    font-family:Roboto, sans-serif;
+    background-color: #2F40AC;
     margin: 0;
     padding: 0;
     overflow: hidden; /* 隱藏影片超出的部分 */
     display: flex;
-    justify-content: center; /* 在水平方向居中對齊 */
-    align-items: center; /* 在垂直方向居中對齊 */
+    justify-content: center;  /*在水平方向居中對齊 */
+    align-items: center;  /*在垂直方向居中對齊 */
     height: 100vh; /* 使內容填滿整個視窗高度 */
+}
+/* 自定義鼠標*/
+.cursor {
+    position: absolute;
+    pointer-events: none; /* 確保鼠標不會干擾點擊事件 */
+}
+.outer-cube{
+    width: 30px;
+    height: 30px;
+    border-radius: 20%;
+    border: 2px solid #6B77C2;
+    position: absolute;
+    transform: translate(-50%, -50%);
+}
+.inner-cube {
+    width: 20px;
+    height: 20px;
+    border-radius: 20%;
+    background-color: #6B77C2;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: all 0.3s ease;
+}
+
+.click .inner-cube {
+    width: 30px;
+    height: 30px;
 }
 
 #loopingVideo {
+   
     right: 0;
     bottom: 0;
     min-width: 100%;
     min-height: 100%;
     width: 1920px;
     height: 1080px;
+
     background-size: cover;
 }
 
 #menu {
     position: fixed;
     top: 0;
-    right: 0;
+    left: 0;
     padding: 20px; /* 調整菜單內容與邊緣的距離 */
     z-index: 999;
 }
@@ -32,27 +65,43 @@ body {
     list-style-type: none;
     margin: 0;
     padding: 0;
-    text-align: right; /* 文字靠右對齊 */
+    text-align: left; /* 文字靠左對齊 */
 }
 
 #menu ul li {
     display: inline;
-    margin: 0 10px;
+    margin: 0 5px;
 }
 
 #menu ul li a {
     text-decoration: none;
     color: white;
-    font-size: 24px;
+    font-size: 18px;
     padding: 10px 20px;
-    border: 1px solid white;
-    border-radius: 5px;
-    transition: all 0.3s ease;
+    position: relative; /* 用于悬停效果 */
+    transition: color 0.3s ease;
+}
+
+#menu ul li a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    display: block;
+    margin-top: 5px;
+    right: 0;
+    background: white;
+    transition: width 0.3s ease, background-color 0.3s ease;
+}
+
+#menu ul li a:hover::after {
+    width: 100%;
+    left: 0;
+    background: white;
 }
 
 #menu ul li a:hover {
-    background-color: white;
-    color: black;
+    color: #CAADCF; /* 悬停时改变文字颜色 */
 }
 
 /* 添加額外的樣式來將內容下移以防止遮擋 */
@@ -68,4 +117,62 @@ body {
     transform: translate(-50%, -50%);
     font-size: 36px;
     color: white;
+}
+
+/* 设置打字机效果的容器样式 */
+.typewriter {
+    position: absolute;
+    left: 13%;
+    bottom: 40%;
+    font-size: 20px;
+    border-right: 2px solid #CAADE3; /* 闪烁光标 */
+    white-space: nowrap; /* 不换行 */
+    color: #CAADE3;
+  
+    animation: caret 0.75s step-end infinite; /* 闪烁光标动画 */
+    z-index: 1001; /* 确保在最上层 */
+}
+/* 第二个打字机效果的容器样式 */
+.typewriter2 {
+    position: absolute;
+    left: 23%; 
+    bottom: 83%; /* 更改位置 */
+    font-size: 20px;
+    border-right: 2px solid #CAADE3; /* 闪烁光标 */
+    white-space: nowrap; /* 不换行 */
+    color: #CAADE3;
+    animation: caret 0.75s step-end infinite; /* 闪烁光标动画 */
+    z-index: 1001; /* 确保在最上层 */
+}
+/* 定义闪烁光标的动画 */
+@keyframes caret {
+    50% {
+        border-color: transparent;
+    }
+}
+
+
+/* 左下角的触发区域 */
+#pause-area {
+    position: absolute;
+    left: 3%;
+    bottom: 1%;
+    width: 50px;
+    height: 50px;
+    background: transparent; /* 触发区域透明 */
+    z-index: 1000;
+    cursor: pointer; /* 鼠标悬停时显示为手型光标 */
+}
+
+/* 信息框的样式 */
+#info-box {
+    display: none; /* 初始隐藏 */
+    position: absolute;
+    left: 8%;
+    bottom: 5%;
+    padding: 10px;
+    background-color: rgba(202, 173, 227, 0.5);
+    color: #ffffff;
+    border-radius: 5px;
+    z-index: 1000;
 }
