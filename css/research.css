@@ -1,0 +1,198 @@
+/* 設置頁面的基本字體 */
+body {
+    font-family:Roboto, sans-serif;
+    background-color: #2F40AC;
+    margin: 0;
+    padding: 0;
+    overflow: hidden; /* 隱藏影片超出的部分 */
+    display: flex;
+    justify-content: center;  /*在水平方向居中對齊 */
+    align-items: center;  /*在垂直方向居中對齊 */
+    height: 100vh; /* 使內容填滿整個視窗高度 */
+}
+/* 自定義鼠標*/
+.cursor {
+    position: absolute;
+    pointer-events: none; /* 確保鼠標不會干擾點擊事件 */
+}
+.outer-cube{
+    width: 30px;
+    height: 30px;
+    border-radius: 20%;
+    border: 2px solid #6B77C2;
+    position: absolute;
+    transform: translate(-50%, -50%);
+}
+.inner-cube {
+    width: 20px;
+    height: 20px;
+    border-radius: 20%;
+    background-color: #6B77C2;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: all 0.3s ease;
+}
+
+.click .inner-cube {
+    width: 30px;
+    height: 30px;
+}
+
+.background-video {
+    right: 0%;
+    bottom: 0%;
+    top: 25%;
+    min-width: 100%;
+    min-height: 100%;
+    width: 1920px;
+    height: 1080px;
+    position: relative;
+    background-size: cover;
+    
+    z-index: -1;
+}
+
+#menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 20px; /* 調整菜單內容與邊緣的距離 */
+    z-index: 999;
+}
+
+#menu ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    text-align: left; /* 文字靠左對齊 */
+}
+
+#menu ul li {
+    display: inline;
+    margin: 0 5px;
+}
+
+#menu ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    padding: 10px 20px;
+    position: relative; /* 用于悬停效果 */
+    transition: color 0.3s ease;
+}
+
+#menu ul li a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    display: block;
+    margin-top: 5px;
+    right: 0;
+    background: white;
+    transition: width 0.3s ease, background-color 0.3s ease;
+}
+
+#menu ul li a:hover::after {
+    width: 100%;
+    left: 0;
+    background: white;
+}
+
+#menu ul li a:hover {
+    color: #CAADCF; /* 悬停时改变文字颜色 */
+}
+
+/* 左下角的触发区域 */
+#pause-area {
+    position: absolute;
+    left: 3%;
+    bottom: 1%;
+    width: 50px;
+    height: 50px;
+    background: transparent; /* 触发区域透明 */
+    z-index: 1000;
+    cursor: pointer; /* 鼠标悬停时显示为手型光标 */
+}
+
+/* 信息框的样式 */
+#info-box {
+    display: none; /* 初始隐藏 */
+    position: absolute;
+    left: 8%;
+    bottom: 5%;
+    padding: 10px;
+    background-color: rgba(202, 173, 227, 0.5);
+    color: #ffffff;
+    border-radius: 5px;
+    z-index: 1000;
+}
+
+.timeline {
+    display: flex;
+    justify-content: space-between;
+    width: 67%;
+    position: absolute;
+    top: 40%; /* 例如，将时间线垂直居中 */
+    left: 13%; /* 例如，将时间线水平居中 */
+}
+
+.line {
+    position: absolute;
+    top: 70%;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: transparent;
+}
+
+.circle-container {
+    position: relative;
+}
+
+.circle {
+    width: 40px;
+    height: 40px;
+    background: #CAADE3;
+    border-radius: 50%;
+    transition: transform 0.3s, background 0.3s;
+}
+
+.info-box {
+    position: absolute;
+    display: none;
+    background:transparent;
+    padding: 5px;
+    
+}
+
+.info-box img {
+    max-width: 400px;
+    max-height: 320px;
+}
+
+.circle-container:nth-child(odd) .info-box {
+    bottom: 40px;
+}
+
+.circle-container:nth-child(even) .info-box {
+    top: 40px;
+}
+
+.circle-container:hover .circle {
+    background: #AD7FD3;
+    transform: scale(1.5);
+}
+
+.circle-container:hover .info-box {
+    display: block;
+}
+
+
+
+
+
+
+

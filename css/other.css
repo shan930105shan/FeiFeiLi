@@ -1,0 +1,290 @@
+body {
+    font-family: Roboto, sans-serif;
+    background-image: url('../image/Other-BG.png'); 
+    background-color: #2F40AC;
+    margin: 0;
+    padding: 0;
+    height: 200vh; /* 使頁面高度超出視窗高度以便測試滾動效果 */
+}
+
+/* 自定義鼠標*/
+.cursor {
+    position: absolute;
+    pointer-events: none; /* 確保鼠標不會干擾點擊事件 */
+}
+.outer-cube{
+    width: 30px;
+    height: 30px;
+    border-radius: 20%;
+    border: 2px solid #6B77C2;
+    position: absolute;
+    transform: translate(-50%, -50%);
+}
+.inner-cube {
+    width: 20px;
+    height: 20px;
+    border-radius: 20%;
+    background-color: #6B77C2;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: all 0.3s ease;
+}
+
+.click .inner-cube {
+    width: 30px;
+    height: 30px;
+}
+
+
+#menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 20px; /* 調整菜單內容與邊緣的距離 */
+    z-index: 999;
+}
+
+#menu ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    text-align: left; /* 文字靠左對齊 */
+}
+
+#menu ul li {
+    display: inline;
+    margin: 0 5px;
+}
+
+#menu ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    padding: 10px 20px;
+    position: relative; /* 用于悬停效果 */
+    transition: color 0.3s ease;
+}
+
+#menu ul li a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    display: block;
+    margin-top: 5px;
+    right: 0;
+    background: white;
+    transition: width 0.3s ease, background-color 0.3s ease;
+}
+
+#menu ul li a:hover::after {
+    width: 100%;
+    left: 0;
+    background: white;
+}
+
+#menu ul li a:hover {
+    color: #CAADCF; /* 悬停时改变文字颜色 */
+}
+
+input[type=checkbox] {
+    /*Hiding the checkbox. We never want to see it.*/
+    position: absolute;
+    left: -9999em;
+}
+
+.container {
+    /*for codepen*/ 
+    margin: 2em auto 0;
+    margin-left: 8%;
+    margin-top: 18%; /* 控制容器距离顶部的距离 */
+    border-radius: 15px; /* 添加圆角 */
+    display: block;
+    perspective: 600px;
+    position: relative;
+    transition: all .1s;
+    width:510px;
+    height: 288px;
+}
+
+.container:hover { 
+    /*Make it a little bigger on hover,
+    to indicate that it can be clicked on.*/
+    transform: scale(1.05, 1.05);
+}
+
+.container2 {
+    /*for codepen*/ 
+    margin: 2em auto 0;
+    margin-left: 8%;
+    margin-top: 40%; /* 控制容器距离顶部的距离 */
+    border-radius: 15px; /* 添加圆角 */
+    display: block;
+    perspective: 600px;
+    position: relative;
+    transition: all .1s;
+    width:510px;
+    height: 288px;
+}
+
+.container2:hover { 
+    /*Make it a little bigger on hover,
+    to indicate that it can be clicked on.*/
+    transform: scale(1.05, 1.05);
+}
+
+.card {
+    cursor: pointer; /*Another clue that this can be clicked on*/
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: inherit;
+    height: inherit; /*Size of the card is set by the container*/
+  
+    backface-visibility: hidden; /*Makes a card invisible from behind.*/
+    transform-style: preserve-3d;
+    transition: all .4s ease-in-out;
+}
+
+.front {
+    /*Background stuffs for codepen*/
+    background: url('../image/Other-01.png') no-repeat;
+    background-size: cover;
+  
+    /*Default rotation values*/
+    transform: rotateX(0deg) rotateY(0deg);
+}
+
+.back {
+    background: #2F40AC; /*for codepen*/
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 15px; 
+    visibility: hidden; 
+    /*Default rotation value*/
+    transform: rotateY(-180deg);
+}
+
+.card2 {
+    cursor: pointer; /*Another clue that this can be clicked on*/
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: inherit;
+    height: inherit; /*Size of the card is set by the container*/
+  
+    backface-visibility: hidden; /*Makes a card invisible from behind.*/
+    transform-style: preserve-3d;
+    transition: all .4s ease-in-out;
+}
+
+.front2 {
+    /*Background stuffs for codepen*/
+    background: url('../image/Other-02.png') no-repeat;
+    background-size: cover;
+  
+    /*Default rotation values*/
+    transform: rotateX(0deg) rotateY(0deg);
+}
+
+.back2 {
+    background: #2F40AC; /*for codepen*/
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 15px; 
+    visibility: hidden; 
+    /*Default rotation value*/
+    transform: rotateY(-180deg);
+}
+
+.video {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.video2 {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+input[type=checkbox]:checked ~ .container .card {
+    animation: lift-shadow .4s linear;
+}
+
+input[type=checkbox]:checked ~ .container .back {
+    visibility: visible;
+    transform: rotateX(0deg) rotateY(0deg);
+}
+
+input[type=checkbox]:checked ~ .container .front {
+    transform: rotateY(180deg);
+}
+
+input[type=checkbox]:checked ~ .container2 .card2 {
+    animation: lift-shadow .4s linear;
+}
+
+input[type=checkbox]:checked ~ .container2 .back2 {
+    visibility: visible;
+    transform: rotateX(0deg) rotateY(0deg);
+}
+
+input[type=checkbox]:checked ~ .container2 .front2 {
+    transform: rotateY(180deg);
+}
+
+
+@keyframes lift {
+    0% {
+        transform: scale(1,1);
+    }
+    20% {
+        transform: scale(1.2,1.2);
+    }
+    80% {
+        transform: scale(1.1,1.1);
+    }
+    100% {
+        transform: scale(1,1);
+    }
+}
+
+@keyframes lift-shadow {
+    0% {
+        box-shadow: 0 0 10px rgba(0,0,0,0.6);
+    }
+    20% {
+        box-shadow: 0 0 35px rgba(0,0,0,0.6);
+    }
+    80% {
+        box-shadow: 0 0 35px rgba(0,0,0,0.6);
+    }
+    100% {
+        box-shadow: 0 0 10px rgba(0,0,0,0.6);
+    }
+}
+.float-text {
+    margin-top: -23%;
+    margin-left: 55%;
+    color: white;
+    font-size: 18px;
+    font-weight: normal;
+    max-width: 420px; 
+    text-align: left; /* 將文字靠左對齊 */
+    line-height: 1.8; 
+}
+
+/* styles.css */
+a {
+    color: #CAADCF;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #ffffff;
+    text-decoration: none;
+}

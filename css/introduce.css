@@ -1,0 +1,159 @@
+body {
+    font-family: Roboto, sans-serif;
+    background-image: url('../image/Inroduce-BG.png'); 
+    background-color: #2F40AC;
+    margin: 0;
+    padding: 0;
+    height: 250vh; /* 使頁面高度超出視窗高度以便測試滾動效果 */
+}
+
+/* 自定義鼠標*/
+.cursor {
+    position: absolute;
+    pointer-events: none; /* 確保鼠標不會干擾點擊事件 */
+}
+.outer-cube{
+    width: 30px;
+    height: 30px;
+    border-radius: 20%;
+    border: 2px solid #6B77C2;
+    position: absolute;
+    transform: translate(-50%, -50%);
+}
+.inner-cube {
+    width: 20px;
+    height: 20px;
+    border-radius: 20%;
+    background-color: #6B77C2;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: all 0.3s ease;
+}
+
+.click .inner-cube {
+    width: 30px;
+    height: 30px;
+}
+
+
+#menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 20px; /* 調整菜單內容與邊緣的距離 */
+    z-index: 999;
+}
+
+#menu ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    text-align: left; /* 文字靠左對齊 */
+}
+
+#menu ul li {
+    display: inline;
+    margin: 0 5px;
+}
+
+#menu ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    padding: 10px 20px;
+    position: relative; /* 用于悬停效果 */
+    transition: color 0.3s ease;
+}
+
+#menu ul li a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    display: block;
+    margin-top: 5px;
+    right: 0;
+    background: white;
+    transition: width 0.3s ease, background-color 0.3s ease;
+}
+
+#menu ul li a:hover::after {
+    width: 100%;
+    left: 0;
+    background: white;
+}
+
+#menu ul li a:hover {
+    color: #CAADCF; /* 悬停时改变文字颜色 */
+}
+.content {
+    padding: 20px;
+}
+
+.image-container {
+    position: relative; /* 初始位置 */
+    margin-top: -68%; /* 調整這個值來設置圖片和文字初始顯示的位置 */
+    margin-left: 8%;
+    margin-bottom: 50px; /* 添加底部邊距 */
+    text-align: center; /* 文字居中 */
+    opacity: 0; /* 初始時透明 */
+    transition: opacity 2s ease-out;
+}
+
+.image-container.visible {
+    opacity: 1; /* 變為不透明 */
+}
+
+.image-container img {
+    max-width: 800px; /* 限制圖片的最大寬度 */
+    max-height: 600px; 
+}
+
+.image-container2 {
+    position: relative; /* 初始位置 */
+    margin-top: 23%; /* 調整這個值來設置圖片和文字初始顯示的位置 */
+    margin-left: 8%;
+    text-align: center; /* 文字居中 */
+    opacity: 0; /* 初始時透明 */
+    transition: opacity 2s ease-out;
+}
+
+.image-container2.visible {
+    opacity: 1; /* 變為不透明 */
+}
+
+.image-container2 img {
+    max-width: 800px; /* 限制圖片的最大寬度 */
+    max-height: 600px; 
+}
+
+.image-container3 {
+    position: relative; /* 初始位置 */
+    margin-top: 25%; /* 調整這個值來設置圖片和文字初始顯示的位置 */
+    margin-left: 8%;
+    text-align: center; /* 文字居中 */
+    opacity: 0; /* 初始時透明 */
+    transition: opacity 2s ease-out;
+}
+
+.image-container3.visible {
+    opacity: 1; /* 變為不透明 */
+}
+
+.image-container3 img {
+    max-width: 800px; /* 限制圖片的最大寬度 */
+    max-height: 600px; 
+}
+
+.float-text {
+    margin-top: 10px;
+    margin-left: 16%;
+    color: white;
+    font-size: 18px;
+    font-weight: normal;
+    max-width: 780px; 
+    text-align: left; /* 將文字靠左對齊 */
+    line-height: 1.5; 
+}
