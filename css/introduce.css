@@ -94,7 +94,7 @@ body {
 
 .image-container {
     position: relative; /* 初始位置 */
-    margin-top: -68%; /* 調整這個值來設置圖片和文字初始顯示的位置 */
+    margin-top: -65%; /* 調整這個值來設置圖片和文字初始顯示的位置 */
     margin-left: 8%;
     margin-bottom: 50px; /* 添加底部邊距 */
     text-align: center; /* 文字居中 */
